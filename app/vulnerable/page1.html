@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable Login Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .form-container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+        input[type="text"], input[type="submit"] { width: 100%; padding: 10px; margin: 10px 0; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login Form (Vulnerable to SQL Injection)</h2>
+        <form method="POST" action="login_vulnerable.php">
+            <input type="text" name="username" placeholder="Enter username" required>
+            <input type="submit" value="Login">
+        </form>
+        <p><strong>Test SQL Injection:</strong></p>
+        <p>Try: <code>admin' OR '1'='1</code></p>
+        <p>Try: <code>' UNION SELECT 1,username,password FROM users--</code></p>
+    </div>
+</body>
+</html>

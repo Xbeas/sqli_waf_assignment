@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Protected Login Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .form-container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+        input[type="text"], input[type="submit"] { width: 100%; padding: 10px; margin: 10px 0; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login Form (Protected by ModSecurity WAF)</h2>
+        <form method="POST" action="login_protected.php">
+            <input type="text" name="username" placeholder="Enter username" required>
+            <input type="submit" value="Login">
+        </form>
+        <p><strong>This form is protected against SQL injection attacks.</strong></p>
+        <p>SQL injection attempts will be blocked by the WAF.</p>
+    </div>
+</body>
+</html>
